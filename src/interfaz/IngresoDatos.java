@@ -157,7 +157,8 @@ public class IngresoDatos {
 					        	jugador = ((org.w3c.dom.Document) document).getElementsByTagName("jugador").item(i).getTextContent();
 					        	n =  ((org.w3c.dom.Document) document).getElementsByTagName("nivel").item(i).getTextContent();
 					        	posicion = ((org.w3c.dom.Document) document).getElementsByTagName("posicion").item(i).getTextContent();
-					        	
+					        	nivel = Double.parseDouble(n);
+					        	Double aux = nivel * 11.34;
 		//						Agrego a la grilla de conexiones
 					        	modelo.addRow(new Object[]{ 
 					        			jugador, n, posicion, "", "", ""
