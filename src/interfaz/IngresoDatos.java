@@ -81,6 +81,7 @@ public class IngresoDatos {
 				 
 			    file = abrirarchivo();
 				if(file != null){
+				if(file.getName().contains("incompatible")){
 				org.w3c.dom.Document document = buildDocument(file);
 				if(document != null){
 				NodeList nodeList = document.getElementsByTagName("dato");
@@ -120,11 +121,14 @@ public class IngresoDatos {
 			        	
 			        }
 			        }
-			    }else{
+				}
+				}else{
 			    	JOptionPane.showMessageDialog(null,"Error al abrir el archivo");
 			    }
-				}
 				
+				}else{
+					JOptionPane.showMessageDialog(null,"Archivo incorrecto");
+				}
 				
 			}
 		});
