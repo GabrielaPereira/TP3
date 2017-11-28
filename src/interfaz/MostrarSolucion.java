@@ -50,6 +50,7 @@ public class MostrarSolucion extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
+		
 //		lbl_sol = new JLabel("hola");
 //		lbl_sol.setBounds(10, 11, 421, 31);
 //		contentPane.add(lbl_sol);
