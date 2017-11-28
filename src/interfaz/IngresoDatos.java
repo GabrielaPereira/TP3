@@ -232,6 +232,9 @@ public class IngresoDatos {
 				Solucion sol = solver.resolver();
 				System.out.println("equipo " + sol);
 				
+				MostrarSolucion ms = new MostrarSolucion();
+				ms.setVisible(true);
+				ms.setSolucion(sol);
 				
 				
 			}
