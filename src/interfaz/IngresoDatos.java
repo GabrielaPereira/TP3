@@ -229,6 +229,7 @@ public class IngresoDatos {
 				System.out.println("equipo " + sol);
 				
 				
+				
 			}
 		});
 		btn_hayEquipo.setBounds(540, 504, 227, 28);
