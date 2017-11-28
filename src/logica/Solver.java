@@ -6,34 +6,31 @@ public class Solver {
 	
 	InstanciaJugadores instancia;
 	private ArrayList <Jugador> jugadores;
-
-	private Solucion  mejor;
+    private Solucion  mejor;
 	private Solucion solucion;
 	
 	public Solver(InstanciaJugadores inst){
 		instancia = inst;
 		jugadores = inst.getObjetos();
-}
- public ArrayList getJugadores(){
-	 return jugadores;
- }
+     }
+    
+	
+	public ArrayList<Jugador> getJugadores(){
+	  return jugadores;
+    }
+    
 	public Solucion resolver(){
 		mejor = new Solucion();
 		solucion = new Solucion();
 		generarSolucionesDesde(0);
-		System.out.println(mejor.beneficioSolucion());
 		return mejor;
 	}
 	
-
-
-	   private void generarSolucionesDesde(int i) {
-			
-		   if(i == instancia.cantidadDeJugadores()){
-				if(esFactible(solucion) && esMejor(solucion, mejor))
-					mejor = solucion.clonar();
-			}else {
-				if (!solucion.jugadorIncompatible(jugadores.get(i)))
+    private void generarSolucionesDesde(int i) {
+		if(i == cantJugadoresInstancia()){
+				if(esSolucion())mejor = solucion.clonar();
+		}else{
+			   if (!solucion.jugadorIncompatible(jugadores.get(i)))
 				        solucion.agregarJugador(jugadores.get(i));
 				generarSolucionesDesde(i+1);
 				solucion.eliminarJugador(jugadores.get(i));
@@ -41,25 +38,44 @@ public class Solver {
 			}		
 		}
    
-   
-   
-  
-   
-public boolean esMejor(Solucion a , Solucion b){
-	return a.beneficioSolucion() > b.beneficioSolucion();
-  }
-	
+    public boolean esSolucion(){
+      return esFactible(solucion) && esMejor(solucion, mejor);	
+    }
+    private int cantJugadoresInstancia(){
+    	return instancia.cantidadDeJugadores();
+    }
+    
+    public boolean esMejor(Solucion a , Solucion b){
+	 return a.beneficioSolucion() > b.beneficioSolucion();
+     }
+  	
 	public boolean esFactible(Solucion solucion){
-	if(formacionDelanteros() == solucion.cantDelanteros() && formacionDefensores() == solucion.cantDefensores() && formacionMediocampistas() == solucion.cantMediocampistas() && solucion.cantArqueros() == 1) return true;
+	  if(condicionDelanteros() && condicionDefensores() && condicionMediocampistas() && condicionArquero()) return true;
 	return false;
 	}
-
+	
+	private boolean condicionDelanteros(){
+	  return formacionDelanteros() == solucion.cantDelanteros();
+	}
+	
+	private boolean condicionDefensores(){
+	  return formacionDefensores() == solucion.cantDefensores();
+	}
+	
+	private boolean condicionMediocampistas(){
+	  return formacionMediocampistas() == solucion.cantMediocampistas();
+	}
+	
+	private boolean condicionArquero(){
+	  return solucion.cantArqueros() == 1;
+	}
+	
 	public int formacionDelanteros(){
-		return instancia.formacionDelanteros();
+	  return instancia.formacionDelanteros();
 	}
 	
 	public int formacionDefensores(){
-		return instancia.formacionDefensores();
+      return instancia.formacionDefensores();
 	}
 	
 	public int formacionMediocampistas(){
