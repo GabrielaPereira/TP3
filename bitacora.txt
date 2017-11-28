@@ -1,0 +1,19 @@
+Bitacora de coding
+
+DIA 1
+Reporto que anda el levantar archivos con: encabezados para vó Benito, colores para marcar en verde los que no tienen ningun incompatible. 
+Se sigue trabajando ... en validar cuando levanta por error del de incompatibles al pedir jugadores.
+Y ver las imagenes...
+
+---------- Fin de la transmisión ---------
+
+DIA 2... 
+november 5th... I´m still alive...
+Clase jugador agregué equals y hashcode.
+Cree la estructura instanciaEquipo (tomando como ejemplo el código de la mochila) con
+la estructura básica del equipo(nivelTotal, formacion, equipo). la fuerza bruta la pongo en un futuro 
+solver. 
+
+><0>
+little fish 
+---------- Fin del la transmisión ----------------

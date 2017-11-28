@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jugadores>
+<dato id="1"><jugador>Otamendi</jugador><posicion>Defensor</posicion><nivel>8.0</nivel></dato>
+<dato id="2"><jugador>Funes Mori</jugador><posicion>Defensor</posicion><nivel>7.0</nivel></dato>
+<dato id="3"><jugador>Mercado</jugador><posicion>Defensor</posicion><nivel>6.0</nivel></dato>
+<dato id="4"><jugador>Pazzela</jugador><posicion>Defensor</posicion><nivel>7.0</nivel></dato>
+<dato id="5.0"><jugador>Mascherano</jugador><posicion>Defensor</posicion><nivel>10.0</nivel></dato>
+<dato id="6.0"><jugador>Fazio</jugador><posicion>Defensor</posicion><nivel>8.0</nivel></dato>
+<dato id="7.0"><jugador>Romero</jugador><posicion>Arquero</posicion><nivel>9.0</nivel></dato>
+<dato id="8.0"><jugador>Guzman</jugador><posicion>Arquero</posicion><nivel>8.0</nivel></dato>
+<dato id="9.0"><jugador>Marchesin</jugador><posicion>Arquero</posicion><nivel>8.0</nivel></dato>
+<dato id="10.0"><jugador>Acuña</jugador><posicion>Mediocampista</posicion><nivel>7.0</nivel></dato>
+<dato id="11"><jugador>Biglia</jugador><posicion>Mediocampista</posicion><nivel>5.0</nivel></dato>
+<dato id="12"><jugador>Rigone</jugador><posicion>Mediocampista</posicion><nivel>6.0</nivel></dato>
+<dato id="13"><jugador>Paredes</jugador><posicion>Mediocampista</posicion><nivel>7.0</nivel></dato>
+<dato id="14"><jugador>Kranevitter</jugador><posicion>Mediocampista</posicion><nivel>8.0</nivel></dato>
+<dato id="15.0"><jugador>Banega</jugador><posicion>Mediocampista</posicion><nivel>8.0</nivel></dato>
+<dato id="16.0"><jugador>Papu Gomez</jugador><posicion>Mediocampista</posicion><nivel>8.0</nivel></dato>
+<dato id="17.0"><jugador>Salvio</jugador><posicion>Mediocampista</posicion><nivel>7.0</nivel></dato>
+<dato id="18.0"><jugador>Diego peroti</jugador><posicion>Mediocampista</posicion><nivel>6.0</nivel></dato>
+<dato id="19.0"><jugador>Messi</jugador><posicion>Delantero</posicion><nivel>10.0</nivel></dato>
+<dato id="20"><jugador>Agüero</jugador><posicion>Delantero</posicion><nivel>8.0</nivel></dato>
+<dato id="21"><jugador>Icardi</jugador><posicion>Delantero</posicion><nivel>8.0</nivel></dato>
+<dato id="22"><jugador>Dybala</jugador><posicion>Delantero</posicion><nivel>8.0</nivel></dato>
+<dato id="23"><jugador>Di Maria</jugador><posicion>Delantero</posicion><nivel>9.0</nivel></dato>
+</jugadores>
+

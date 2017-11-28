@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<incompatibles>
+<dato id="1">	<jugador>Otamendi</jugador>	<i1></i1>	<i2></i2>	<i3></i3>	</dato>
+<dato id="2">	<jugador>Funes Mori</jugador>	<i1></i1>	<i2></i2>	<i3></i3>	</dato>
+<dato id="3">	<jugador>Mercado</jugador>	<i1></i1>	<i2></i2>	<i3></i3>	</dato>
+<dato id="4">	<jugador>Pazzela</jugador>	<i1></i1>	<i2></i2>	<i3></i3>	</dato>
+<dato id="5">	<jugador>Mascherano</jugador>	<i1></i1>	<i2></i2>	<i3></i3>	</dato>
+<dato id="6">	<jugador>Fazio</jugador>	<i1></i1>	<i2></i2>	<i3></i3>	</dato>
+<dato id="7">	<jugador>Romero</jugador>	<i1>Guzman</i1>	<i2></i2>	<i3></i3>	</dato>
+<dato id="8">	<jugador>Guzman</jugador>	<i1>Romero</i1>	<i2></i2>	<i3></i3>	</dato>
+<dato id="9">	<jugador>Marchesin</jugador>	<i1></i1>	<i2></i2>	<i3></i3>	</dato>
+<dato id="10">	<jugador>Acuña</jugador>	<i1></i1>	<i2></i2>	<i3></i3>	</dato>
+<dato id="11">	<jugador>Biglia</jugador>	<i1>Di Maria</i1>	<i2></i2>	<i3></i3>	</dato>
+<dato id="12">	<jugador>Rigone</jugador>	<i1></i1>	<i2></i2>	<i3></i3>	</dato>
+<dato id="13">	<jugador>Paredes</jugador>	<i1></i1>	<i2></i2>	<i3></i3>	</dato>
+<dato id="14">	<jugador>Kranevitter</jugador>	<i1>Papu Gomez</i1>	<i2></i2>	<i3></i3>	</dato>
+<dato id="15">	<jugador>Banega</jugador>	<i1></i1>	<i2></i2>	<i3></i3>	</dato>
+<dato id="16">	<jugador>Papu Gomez</jugador>	<i1>Kranevitter</i1>	<i2></i2>	<i3></i3>	</dato>
+<dato id="17">	<jugador>Salvio</jugador>	<i1></i1>	<i2></i2>	<i3></i3>	</dato>
+<dato id="18">	<jugador>Diego peroti</jugador>	<i1></i1>	<i2></i2>	<i3></i3>	</dato>
+<dato id="19">	<jugador>Messi</jugador>	<i1>Icardi</i1>	<i2>Dybala</i2>	<i3></i3>	</dato>
+<dato id="20">	<jugador>Agüero</jugador>	<i1>Dybala</i1>	<i2></i2>	<i3></i3>	</dato>
+<dato id="21">	<jugador>Icardi</jugador>	<i1>Messi</i1>	<i2></i2>	<i3></i3>	</dato>
+<dato id="22">	<jugador>Dybala</jugador>	<i1>Aguero</i1>	<i2>Messi</i2>	<i3></i3>	</dato>
+<dato id="23">	<jugador>Di Maria</jugador>	<i1>Biglia</i1>	<i2></i2>	<i3></i3>	</dato>
+
+</incompatibles>
+
