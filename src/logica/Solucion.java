@@ -54,27 +54,27 @@ private ArrayList<Jugador> equipo;
 	public int cantDefensores(){
 		int ret = 0;
 		for(Jugador jugador: equipo)
-			if(jugador.getPosicion() == "Defensor") ret++;
+			if(jugador.getPosicion().equals("Defensor")) ret++;
 		return ret;
 	}
 	public int cantMediocampistas(){
 		int ret = 0;
 		for(Jugador jugador: equipo)
-			if(jugador.getPosicion() == "Mediocampista") ret++;
+			if(jugador.getPosicion().equals( "Mediocampista")) ret++;
 		return ret;
 	}
 	
 	public int cantDelanteros(){
 		int ret = 0;
 		for(Jugador jugador: equipo)
-			if(jugador.getPosicion() == "Delantero") ret++;
+			if(jugador.getPosicion().equals("Delantero")) ret++;
 		return ret;
 	}
 	
 	public int cantArqueros(){
 		int ret = 0;
 		for(Jugador jugador: equipo)
-			if(jugador.getPosicion() == "Arquero") ret++;
+			if(jugador.getPosicion().equals("Arquero")) ret++;
 		return ret;
 	}
 	public Solucion clonar(){
