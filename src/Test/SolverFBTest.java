@@ -1,8 +1,13 @@
-package logica;
+package Test;
 
 import static org.junit.Assert.*;
 
 import org.junit.Test;
+
+import logica.InstanciaJugadores;
+import logica.Jugador;
+import logica.Solucion;
+import logica.Solver;
 
 public class SolverFBTest {
 	 @Test

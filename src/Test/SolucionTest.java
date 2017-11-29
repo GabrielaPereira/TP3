@@ -1,7 +1,10 @@
-package logica;
+package Test;
 import static org.junit.Assert.*;
 
 import org.junit.Test;
+
+import logica.Jugador;
+import logica.Solucion;
 
 public class SolucionTest {
 	

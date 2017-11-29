@@ -1,4 +1,8 @@
-package logica;
+package Test;
+
+import logica.InstanciaJugadores;
+import logica.Jugador;
+import logica.Solucion;
 
 public class Test {
 	
