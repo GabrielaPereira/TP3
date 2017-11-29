@@ -33,6 +33,13 @@ public class MostrarSolucion extends JFrame {
 	private JLayeredPane layer_mediocampo;
 	private JLayeredPane layer_delanteros;
 	private JLabel lbl_beneficio; 
+	private JLabel lbl_ico;
+	private JLayeredPane layer_fotos_del;
+	private JLayeredPane layer_fotos_mc;
+	private JLayeredPane layer_fotos_def;
+	private JLayeredPane layer_foto_arq;
+
+	
 	
 	/**
 	 * Launch the application.
@@ -64,23 +71,40 @@ public class MostrarSolucion extends JFrame {
 		contentPane.setLayout(null);
 		
 		lbl_beneficio = new JLabel("");
-		lbl_beneficio.setBounds(10, 53, 460, 40);
+		lbl_beneficio.setBounds(109, 53, 269, 40);
 		contentPane.add(lbl_beneficio);
 		
+		layer_fotos_del = new JLayeredPane();
+		layer_fotos_del.setBounds(10, 130, 464, 82);
+		contentPane.add(layer_fotos_del);
+		
 		layer_delanteros = new JLayeredPane();
-		layer_delanteros.setBounds(10, 137, 464, 54);
+		layer_delanteros.setBounds(10, 201, 464, 27);
 		contentPane.add(layer_delanteros);
 		
+		layer_fotos_mc = new JLayeredPane();
+		layer_fotos_mc.setBounds(9, 235,464, 82);
+		contentPane.add(layer_fotos_mc);
+		
 		layer_mediocampo = new JLayeredPane();
-		layer_mediocampo.setBounds(10, 320, 464, 40);
+		layer_mediocampo.setBounds(10, 320, 464, 27);
 		contentPane.add(layer_mediocampo);
 		
 		layer_defensores = new JLayeredPane();
-		layer_defensores.setBounds(10, 435, 464, 54);
+		layer_defensores.setBounds(10, 481, 464, 33);
 		contentPane.add(layer_defensores);
 		
+		layer_fotos_def = new JLayeredPane();
+		layer_fotos_def.setBounds(10, 400, 464, 82);
+		contentPane.add(layer_fotos_def);
+		
+		layer_foto_arq = new JLayeredPane();
+		layer_foto_arq.setLayout(null);
+		layer_foto_arq.setBounds(210, 530, 61, 82);
+		contentPane.add(layer_foto_arq);
+		
 		layer_arquero = new JLayeredPane();
-		layer_arquero.setBounds(181, 584, 117, 25);
+		layer_arquero.setBounds(185, 614, 117, 25);
 		contentPane.add(layer_arquero);
 		layer_arquero.setLayout(null);
 		
@@ -88,20 +112,19 @@ public class MostrarSolucion extends JFrame {
 		lbl_cancha.setIcon(new ImageIcon(MostrarSolucion.class.getResource("/img/cancha.png")));
 		lbl_cancha.setBounds(0, 0, 484, 650);
 		contentPane.add(lbl_cancha);
-		
-		
-		
-	
+
 	}
 
 	public void setSolucion(Solucion sol) {
 		equipoSolucion = sol;
-		int x = 5, y =0;
+		int x = 10, y =0;
 		int xmc = 5, xde =5;
-		//		soltxt = sol.toString();
 		int prop = (layer_delanteros.getWidth()/sol.cantDelanteros());
 		int propmc = (layer_mediocampo.getWidth()/sol.cantMediocampistas());
 		int propde = (layer_defensores.getWidth()/sol.cantDefensores());
+		
+		
+		
 		for (int i=0;i<sol.cantJugadores();i++){
 			lbl_sol = new JLabel();
 			lbl_sol_ico = new JLabel();
@@ -112,11 +135,19 @@ public class MostrarSolucion extends JFrame {
 			if(sol.getJugador(i).getPosicion().equals("Delantero")){
 				
 				lbl_sol.setBounds(x, y, 100, 25);
-					
 				lbl_sol.setText(sol.getJugador(i).getNombre().toString() );
 				layer_delanteros.setAlignmentX(CENTER_ALIGNMENT);
 				layer_delanteros.add(lbl_sol);
-
+				
+				lbl_ico = new JLabel();
+				try {
+				lbl_ico.setIcon(new ImageIcon(MostrarSolucion.class.getResource("/img/"+ sol.getJugador(i).getNombre().toString()+".png")));
+				}catch (NullPointerException Exception){
+					lbl_ico.setIcon(new ImageIcon(MostrarSolucion.class.getResource("/img/error.png")));
+				}
+				lbl_ico.setBounds(x, y, 100, 82);
+				layer_fotos_del.add(lbl_ico);
+				
 				x += prop;
 			}
 			if(sol.getJugador(i).getPosicion().equals("Mediocampista")){
@@ -124,18 +155,51 @@ public class MostrarSolucion extends JFrame {
 				lbl_sol.setBounds(xmc, y, 100, 20);
 				lbl_sol.setText( sol.getJugador(i).getNombre().toString() );
 				layer_mediocampo.add(lbl_sol);
+				
+				lbl_ico = new JLabel();
+				try{
+				lbl_ico.setIcon(new ImageIcon(MostrarSolucion.class.getResource("/img/"+ sol.getJugador(i).getNombre().toString()+".png")));
+				}catch (NullPointerException Exception){
+					lbl_ico.setIcon(new ImageIcon(MostrarSolucion.class.getResource("/img/error.png")));
+				}
+				lbl_ico.setBounds(xmc, y, 100, 82);
+				layer_fotos_mc.add(lbl_ico);		
+				
 				xmc += propmc ;
 			}
 			if(sol.getJugador(i).getPosicion().equals("Defensor")){
-				xde += propde ;
+				
 				lbl_sol.setBounds(xde, y, 100, 25);
 				lbl_sol.setText(sol.getJugador(i).getNombre().toString() );
 				layer_defensores.add(lbl_sol);
+				
+				lbl_ico = new JLabel();
+				try {
+					lbl_ico.setIcon(new ImageIcon(MostrarSolucion.class.getResource("/img/"+ sol.getJugador(i).getNombre().toString()+".png")));
+				} catch (NullPointerException Exception){
+					lbl_ico.setIcon(new ImageIcon(MostrarSolucion.class.getResource("/img/error.png")));
+				}
+				
+
+				lbl_ico.setBounds(xde, y, 100, 82);
+				layer_fotos_def.add(lbl_ico);
+				xde += propde ;
 			}
 			if(sol.getJugador(i).getPosicion().equals("Arquero")){
-				lbl_sol.setBounds(10, y, 100, 25);
+				lbl_sol.setBounds(5, y, 100, 25);
 				lbl_sol.setText( sol.getJugador(i).getNombre().toString() );
+				layer_arquero.setAlignmentX(CENTER_ALIGNMENT);
 				layer_arquero.add(lbl_sol);
+				
+				lbl_ico = new JLabel();
+				try{
+				lbl_ico.setIcon(new ImageIcon(MostrarSolucion.class.getResource("/img/"+ sol.getJugador(i).getNombre().toString()+".png")));
+				} catch (NullPointerException Exception){
+					lbl_ico.setIcon(new ImageIcon(MostrarSolucion.class.getResource("/img/error.png")));
+				}
+				lbl_ico.setBounds(13, y, 100, 82);
+				layer_foto_arq.add(lbl_ico);	
+				
 			}
 		}
 		lbl_beneficio.setOpaque(false);
