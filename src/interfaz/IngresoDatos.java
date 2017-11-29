@@ -37,7 +37,7 @@ public class IngresoDatos {
 	private JFrame frame;
 	private JTable grid_jugadores;
 	private ArrayList<Jugador> lista_jugadores ;
-	private ArrayList<String> lista_incompatibles ;
+	
 	DefaultTableModel modelo;
 	
 	
@@ -73,8 +73,9 @@ public class IngresoDatos {
 		lista_jugadores = new ArrayList<Jugador>();
 		
 		
-		JButton btnSubirListaIncompativas = new JButton("Subir lista Incompatibles");
-		btnSubirListaIncompativas.addActionListener(new ActionListener() {
+		JButton btn_incompatibles = new JButton("Subir lista Incompatibles");
+		btn_incompatibles.setEnabled(false);
+		btn_incompatibles.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 			
 				File file = new File("");
@@ -132,8 +133,8 @@ public class IngresoDatos {
 				
 			}
 		});
-		btnSubirListaIncompativas.setBounds(459, 11, 184, 30);
-		frame.getContentPane().add(btnSubirListaIncompativas);
+		btn_incompatibles.setBounds(459, 11, 184, 30);
+		frame.getContentPane().add(btn_incompatibles);
 		
 		JButton btn_jugadores = new JButton("Subir lista Jugadores");
 		btn_jugadores.addActionListener(new ActionListener() {
@@ -174,6 +175,8 @@ public class IngresoDatos {
 					        	j.setNivel(nivel);
 					        	j.setPosicion(posicion);
 					        	lista_jugadores.add(j);
+					        	
+					        	btn_incompatibles.setEnabled(true);
 					        }
 				        }
 				    				
@@ -186,7 +189,7 @@ public class IngresoDatos {
 				
 				}
 			}
-
+			
 			
 		});
 		btn_jugadores.setBounds(137, 11, 177, 30);
@@ -261,7 +264,6 @@ public class IngresoDatos {
 		try {
 			documentBuilder = documentBuilderFactory.newDocumentBuilder();
 		} catch (ParserConfigurationException e) {
-			
 			e.printStackTrace();
 		}
 		return documentBuilder;
