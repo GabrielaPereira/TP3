@@ -13,6 +13,7 @@ import logica.Solucion;
 
 import javax.swing.JLabel;
 import javax.swing.ImageIcon;
+import java.awt.Color;
 
 public class MostrarSolucion extends JFrame {
 
@@ -20,6 +21,7 @@ public class MostrarSolucion extends JFrame {
 	private Solucion equipoSolucion;
 	private String soltxt;
 	private JLabel lbl_sol;
+	private JPanel jp_delanteros;
 	
 	/**
 	 * Launch the application.
@@ -50,15 +52,22 @@ public class MostrarSolucion extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		
+		jp_delanteros = new JPanel();
+		jp_delanteros.setForeground(new Color(255, 255, 255));
+		jp_delanteros.setBackground(new Color(0, 128, 0));
+		jp_delanteros.setBounds(10, 149, 460, 66);
+		contentPane.add(jp_delanteros);
+		jp_delanteros.setLayout(null);
 //		lbl_sol = new JLabel("hola");
 //		lbl_sol.setBounds(10, 11, 421, 31);
 //		contentPane.add(lbl_sol);
 		
 		JLabel lbl_cancha = new JLabel("");
-		lbl_cancha.setIcon(new ImageIcon("C:\\Users\\IBM_ADMIN\\git5\\Tp3\\imagenes\\CANCHA.png"));
+		lbl_cancha.setIcon(new ImageIcon(MostrarSolucion.class.getResource("/img/cancha.png")));
 		lbl_cancha.setBounds(0, 0, 484, 650);
 		contentPane.add(lbl_cancha);
+		
+		
 		
 	
 	}
@@ -66,14 +75,22 @@ public class MostrarSolucion extends JFrame {
 	public void setSolucion(Solucion sol) {
 		equipoSolucion = sol;
 		int x = 0, y =5;
-//		soltxt = sol.toString();
+		//		soltxt = sol.toString();
+		int prop = (jp_delanteros.getWidth()/sol.cantDelanteros()-50);
 		for (int i=0;i<sol.cantJugadores();i++){
-			lbl_sol = new JLabel(sol.getJugador(i).toString());
-			lbl_sol.setBounds((x+=5), y, 20, 5);
-			contentPane.add(lbl_sol);
+			String posAux = sol.getJugador(i).getPosicion().toString();
+			
+			if(sol.getJugador(i).getPosicion().equals("Delantero")){
+				x += prop ;
+				lbl_sol = new JLabel();
+				lbl_sol.setOpaque(false);
+				lbl_sol.setBounds(x, y, 100, 25);
+				lbl_sol.setText(sol.getJugador(i).getNombre().toString());
+				
+				jp_delanteros.add(lbl_sol);
+			}
 		}
 //		System.out.println("mostrar :"+ equipoSolucion);
 		
 	}
-	
 }
