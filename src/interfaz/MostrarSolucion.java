@@ -32,6 +32,7 @@ public class MostrarSolucion extends JFrame {
 	private JLayeredPane layer_arquero;
 	private JLayeredPane layer_mediocampo;
 	private JLayeredPane layer_delanteros;
+	private JLabel lbl_beneficio; 
 	
 	/**
 	 * Launch the application.
@@ -62,6 +63,10 @@ public class MostrarSolucion extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
+		lbl_beneficio = new JLabel("");
+		lbl_beneficio.setBounds(10, 53, 460, 40);
+		contentPane.add(lbl_beneficio);
+		
 		layer_delanteros = new JLayeredPane();
 		layer_delanteros.setBounds(10, 137, 464, 54);
 		contentPane.add(layer_delanteros);
@@ -91,8 +96,8 @@ public class MostrarSolucion extends JFrame {
 
 	public void setSolucion(Solucion sol) {
 		equipoSolucion = sol;
-		int x = 0, y =5;
-		int xmc = 0, xde =0;
+		int x = 5, y =0;
+		int xmc = 5, xde =5;
 		//		soltxt = sol.toString();
 		int prop = (layer_delanteros.getWidth()/sol.cantDelanteros());
 		int propmc = (layer_mediocampo.getWidth()/sol.cantMediocampistas());
@@ -107,8 +112,8 @@ public class MostrarSolucion extends JFrame {
 			if(sol.getJugador(i).getPosicion().equals("Delantero")){
 				
 				lbl_sol.setBounds(x, y, 100, 25);
-
-				lbl_sol.setText("<html><div style='text-align: center;'><img src= '/img/Messi.png' width='30px' height='30px'/>"  + sol.getJugador(i).getNombre().toString() + "</div></html>");
+					
+				lbl_sol.setText(sol.getJugador(i).getNombre().toString() );
 				layer_delanteros.setAlignmentX(CENTER_ALIGNMENT);
 				layer_delanteros.add(lbl_sol);
 
@@ -117,22 +122,26 @@ public class MostrarSolucion extends JFrame {
 			if(sol.getJugador(i).getPosicion().equals("Mediocampista")){
 				
 				lbl_sol.setBounds(xmc, y, 100, 20);
-				lbl_sol.setText("<html><div style='text-align: center;'>" + sol.getJugador(i).getNombre().toString() + "</div></html>");
+				lbl_sol.setText( sol.getJugador(i).getNombre().toString() );
 				layer_mediocampo.add(lbl_sol);
 				xmc += propmc ;
 			}
 			if(sol.getJugador(i).getPosicion().equals("Defensor")){
 				xde += propde ;
 				lbl_sol.setBounds(xde, y, 100, 25);
-				lbl_sol.setText("<html><div style='text-align: center;'>"+ sol.getJugador(i).getNombre().toString() +"</div></html>");
+				lbl_sol.setText(sol.getJugador(i).getNombre().toString() );
 				layer_defensores.add(lbl_sol);
 			}
 			if(sol.getJugador(i).getPosicion().equals("Arquero")){
 				lbl_sol.setBounds(10, y, 100, 25);
-				lbl_sol.setText("<html><div style='text-align: center;'>"+ sol.getJugador(i).getNombre().toString()+ "</div></html>");
+				lbl_sol.setText( sol.getJugador(i).getNombre().toString() );
 				layer_arquero.add(lbl_sol);
 			}
 		}
+		lbl_beneficio.setOpaque(false);
+		lbl_beneficio.setForeground(Color.WHITE);
+		lbl_beneficio.setFont(new Font("Arial", Font.BOLD, 17));
+		lbl_beneficio.setText("Beneficio : "+sol.beneficioSolucion());
 //		System.out.println("mostrar :"+ equipoSolucion);
 		
 	}
