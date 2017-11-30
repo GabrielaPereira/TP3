@@ -26,6 +26,9 @@ public class Solver {
 		return mejor;
 	}
 	
+	public boolean existeSolucion(){
+		return mejor.equipo.size() != 0;
+	}
     private void generarSolucionesDesde(int i) {
 		if(i == cantJugadoresInstancia()){
 				if(esSolucion())mejor = solucion.clonar();

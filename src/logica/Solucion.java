@@ -8,7 +8,7 @@ import java.util.Set;
 
 
 public class Solucion {
-private ArrayList<Jugador> equipo;
+public ArrayList<Jugador> equipo;
 
 	
 	public Solucion(){
