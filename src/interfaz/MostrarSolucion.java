@@ -117,13 +117,13 @@ public class MostrarSolucion extends JFrame {
 
 	public void setSolucion(Solucion sol) {
 		equipoSolucion = sol;
+		
 		int x = 10, y =0;
 		int xmc = 5, xde =5;
 		int prop = (layer_delanteros.getWidth()/sol.cantDelanteros());
 		int propmc = (layer_mediocampo.getWidth()/sol.cantMediocampistas());
 		int propde = (layer_defensores.getWidth()/sol.cantDefensores());
-		
-		
+				
 		
 		for (int i=0;i<sol.cantJugadores();i++){
 			lbl_sol = new JLabel();
@@ -206,7 +206,7 @@ public class MostrarSolucion extends JFrame {
 		lbl_beneficio.setForeground(Color.WHITE);
 		lbl_beneficio.setFont(new Font("Arial", Font.BOLD, 17));
 		lbl_beneficio.setText("Beneficio : "+sol.beneficioSolucion());
-//		System.out.println("mostrar :"+ equipoSolucion);
+
 		
 	}
 }

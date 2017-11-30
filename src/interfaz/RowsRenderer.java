@@ -31,10 +31,10 @@ public class RowsRenderer extends DefaultTableCellRenderer {
 	    	this.setForeground(Color.red);
 	    	setBackground(Color.yellow);
 	    }
-//	    if(row == 0){
-//	    	setBackground(Color.blue);
-//		    this.setForeground(Color.WHITE);
-//	    }
+	    if(row == 0){
+	    	setBackground(Color.white);
+		    this.setForeground(Color.black);
+	    }
 	    
 	    return this;
 	  }

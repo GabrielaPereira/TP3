@@ -102,8 +102,7 @@ public class IngresoDatos {
 			   
 		        	
 			        	for(int k=0;k<lista_jugadores.size();k++){
-//			        		System.out.println("lista "+lista_jugadores.get(k).getNombre()+"hola");
-//			        		System.out.println("jugador "+jugador+" ++++");
+
 			        		if(lista_jugadores.get(k).getNombre().equals(jugador)){
 			        			
 				        		lista_jugadores.get(k).setIncompatibles(i1);
@@ -119,8 +118,9 @@ public class IngresoDatos {
 			        		}
 			        	}
 			        	
-			        	
+			        
 			        }
+			        
 			        }
 				}
 				}else{
@@ -133,7 +133,7 @@ public class IngresoDatos {
 				
 			}
 		});
-		btn_incompatibles.setBounds(459, 11, 184, 30);
+		btn_incompatibles.setBounds(452, 11, 184, 30);
 		frame.getContentPane().add(btn_incompatibles);
 		
 		JButton btn_jugadores = new JButton("Subir lista Jugadores");
@@ -177,6 +177,7 @@ public class IngresoDatos {
 					        	lista_jugadores.add(j);
 					        	
 					        	btn_incompatibles.setEnabled(true);
+					        	btn_jugadores.setEnabled(false);
 					        }
 				        }
 				    				
@@ -192,12 +193,12 @@ public class IngresoDatos {
 			
 			
 		});
-		btn_jugadores.setBounds(137, 11, 177, 30);
+		btn_jugadores.setBounds(179, 11, 177, 30);
 		frame.getContentPane().add(btn_jugadores);
 		
-		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(53, 52, 714, 440);
-		frame.getContentPane().add(scrollPane);
+		JScrollPane grilla_jugadores = new JScrollPane();
+		grilla_jugadores.setBounds(53, 52, 714, 440);
+		frame.getContentPane().add(grilla_jugadores);
 		
 		grid_jugadores = new JTable();
 		grid_jugadores.setEnabled(false);
@@ -217,7 +218,7 @@ public class IngresoDatos {
 		
 		modelo = (DefaultTableModel) grid_jugadores.getModel();   //modelo para la grilla
 
-		scrollPane.setViewportView(grid_jugadores);
+		grilla_jugadores.setViewportView(grid_jugadores);
 		
 		JButton btn_hayEquipo = new JButton("Hay equipo?!");
 		btn_hayEquipo.addActionListener(new ActionListener() {
@@ -229,16 +230,24 @@ public class IngresoDatos {
 				{ 
 					instancia.agregarJugador(lista_jugadores.get(i));
 				}
-							
-				Solver solver = new Solver(instancia);	
-			
-				Solucion sol = solver.resolver();
-				System.out.println("equipo " + sol);
-				System.out.println("equipo " + sol.beneficioSolucion());
-				MostrarSolucion ms = new MostrarSolucion();
-				ms.setVisible(true);
-				ms.setSolucion(sol);
-				
+						
+				try {
+					Solver solver = new Solver(instancia);	
+	
+					Solucion sol = solver.resolver();
+					System.out.println("equipo " + sol);
+					System.out.println("equipo " + sol.beneficioSolucion());
+					if (sol.equipo.size()!=0){
+						System.out.println(sol.equipo.size()+" tam eq");
+						MostrarSolucion ms = new MostrarSolucion();
+						ms.setVisible(true);
+						ms.setSolucion(sol);
+					}else{
+						JOptionPane.showMessageDialog(null,"No hay equipo óptimo");
+					}
+				} catch (NullPointerException Exception) {
+					JOptionPane.showMessageDialog(null,"No hay equipo óptimo");
+				}
 				
 			}
 		});
