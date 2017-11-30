@@ -14,6 +14,7 @@ public class SolverFBTest {
 	public void solucionFactible() {
 		InstanciaJugadores instancia = new InstanciaJugadores(4,3,3);
 		Solucion solucion = cargarSolucion();
+		
 		Solver solverFB = new Solver(instancia);
 		assertTrue(solverFB.esFactible(solucion));
 	}
@@ -23,6 +24,7 @@ public class SolverFBTest {
 		InstanciaJugadores instancia = new InstanciaJugadores(5,3,3);
 		instancia = cargarInstancia();
 		Solucion solucion = cargarSolucion();
+		
 		Solver solverFB = new Solver(instancia);
 		assertFalse(solverFB.esFactible(solucion));
 	}
