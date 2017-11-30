@@ -50,24 +50,24 @@ public class Solver {
      }
   	
 	public boolean esFactible(Solucion solucion){
-	  if(condicionDelanteros() && condicionDefensores()
-	     && condicionMediocampistas() && condicionArquero()) return true;
+	  if(condicionDelanteros(solucion) && condicionDefensores(solucion)
+	     && condicionMediocampistas(solucion) && condicionArquero(solucion)) return true;
 	return false;
 	}
 	
-	private boolean condicionDelanteros(){
+	private boolean condicionDelanteros(Solucion solucion){
 	  return formacionDelanteros() == solucion.cantDelanteros();
 	}
 	
-	private boolean condicionDefensores(){
+	private boolean condicionDefensores(Solucion solucion){
 	  return formacionDefensores() == solucion.cantDefensores();
 	}
 	
-	private boolean condicionMediocampistas(){
+	private boolean condicionMediocampistas(Solucion solucion){
 	  return formacionMediocampistas() == solucion.cantMediocampistas();
 	}
 	
-	private boolean condicionArquero(){
+	private boolean condicionArquero(Solucion solucion){
 	  return solucion.cantArqueros() == 1;
 	}
 	
