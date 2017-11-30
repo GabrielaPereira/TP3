@@ -75,27 +75,27 @@ public class MostrarSolucion extends JFrame {
 		contentPane.add(lbl_beneficio);
 		
 		layer_fotos_del = new JLayeredPane();
-		layer_fotos_del.setBounds(10, 130, 464, 82);
+		layer_fotos_del.setBounds(15, 130, 464, 82);
 		contentPane.add(layer_fotos_del);
 		
 		layer_delanteros = new JLayeredPane();
-		layer_delanteros.setBounds(10, 201, 464, 27);
+		layer_delanteros.setBounds(15, 201, 464, 27);
 		contentPane.add(layer_delanteros);
 		
 		layer_fotos_mc = new JLayeredPane();
-		layer_fotos_mc.setBounds(9, 235,464, 82);
+		layer_fotos_mc.setBounds(15, 255,464, 82);
 		contentPane.add(layer_fotos_mc);
 		
 		layer_mediocampo = new JLayeredPane();
-		layer_mediocampo.setBounds(10, 320, 464, 27);
+		layer_mediocampo.setBounds(15, 340, 464, 27);
 		contentPane.add(layer_mediocampo);
 		
 		layer_defensores = new JLayeredPane();
-		layer_defensores.setBounds(10, 481, 464, 33);
+		layer_defensores.setBounds(15, 500, 464, 33);
 		contentPane.add(layer_defensores);
 		
 		layer_fotos_def = new JLayeredPane();
-		layer_fotos_def.setBounds(10, 400, 464, 82);
+		layer_fotos_def.setBounds(15, 420, 464, 82);
 		contentPane.add(layer_fotos_def);
 		
 		layer_foto_arq = new JLayeredPane();
@@ -104,7 +104,7 @@ public class MostrarSolucion extends JFrame {
 		contentPane.add(layer_foto_arq);
 		
 		layer_arquero = new JLayeredPane();
-		layer_arquero.setBounds(185, 614, 117, 25);
+		layer_arquero.setBounds(197, 614, 117, 25);
 		contentPane.add(layer_arquero);
 		layer_arquero.setLayout(null);
 		
