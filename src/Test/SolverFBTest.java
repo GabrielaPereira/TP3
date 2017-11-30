@@ -14,16 +14,15 @@ public class SolverFBTest {
 	public void solucionFactible() {
 		InstanciaJugadores instancia = new InstanciaJugadores(4,3,3);
 		Solucion solucion = cargarSolucion();
-		
 		Solver solverFB = new Solver(instancia);
 		assertTrue(solverFB.esFactible(solucion));
 	}
 
 	@Test
 	public void solucionNoFactible() {
-		InstanciaJugadores instancia = new InstanciaJugadores(3,3,3);
+		InstanciaJugadores instancia = new InstanciaJugadores(5,3,3);
+		instancia = cargarInstancia();
 		Solucion solucion = cargarSolucion();
-		
 		Solver solverFB = new Solver(instancia);
 		assertFalse(solverFB.esFactible(solucion));
 	}
@@ -33,7 +32,7 @@ public class SolverFBTest {
 		Solucion solucion = cargarSolucion();
 		Solucion mejor = cargarSolucionMejor();
 		
-		InstanciaJugadores instancia = new InstanciaJugadores(4,3,3);
+		InstanciaJugadores instancia = new InstanciaJugadores(4,4,3);
 		Solver solver = new Solver(instancia);
 		
 		assertTrue(solver.esMejor(mejor, solucion));
@@ -42,10 +41,10 @@ public class SolverFBTest {
 	
 	@Test
 	public void resolver(){
-		InstanciaJugadores instancia = new InstanciaJugadores(4,3,3);		
+		InstanciaJugadores instancia = new InstanciaJugadores(4,3,3);
+	 //   instancia = cargarInstancia();
 		Solver solverFB = new Solver(instancia);
-		System.out.println(solverFB.resolver());
-	}
+		}
 	
 	
 	
